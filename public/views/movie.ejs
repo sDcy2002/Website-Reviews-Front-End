@@ -1,0 +1,21 @@
+<!-- movie.ejs -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie</title>
+ </head>
+ <body>
+    <h1><%= movie.movie_name %></h1>
+    <p>Category: <%= movie.categoryID %></p>
+    <p>Studio: <%= movie.studioID %></p>
+    <p>Movie Detail: <%= movie.movie_detail %></p>
+    <p>Director: <%= movie.director %></p>
+    <p>Budget: <%= movie.flimmaking_funds %></p>
+    <p>Movie Income: <%= movie.movie_income %></p>
+    <a href="/update_movie/<%= movies.id %>">Edit</a>
+    <a href="/delete_movie/<%= movies.id %>">Delete</a>
+    <a href="/">Back to List</a>
+ </body>
+ </html>

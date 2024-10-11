@@ -1,0 +1,42 @@
+<!-- movies.ejs -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <link rel="stylesheet" href="../css/style.css">
+ </head>
+ <body>
+    <h1>Movies</h1>
+    <table class="movie-table">
+        <tr>
+            <th>Movie Name</th>
+            <th>Category</th>
+            <th>Studio</th>
+            <th>Movie Detail</th>
+            <th>Director</th>
+            <th>Budget</th>
+            <th>Movie Income</th>
+            <th>Actions</th>
+        </tr>
+        <% for (var i = 0; i < movies.length; i++) { %>
+        <tr>
+            <td><%= movies[i].movie_name %></td>
+            <td><%= movies[i].categoryID %></td>
+            <td><%= movies[i].studioID %></td>
+            <td><%= movies[i].movie_detail %></td>
+            <td><%= movies[i].director %></td>
+            <td><%= movies[i].flimmaking_funds %></td>
+            <td><%= movies[i].movie_income %></td>
+            <td>
+                <a href="/movies/<%= movies[i].id %>">View</a>
+                <a href="/update_movie/<%= movies[i].id %>">Edit</a>
+                <a href="/delete_movie/<%= movies[i].id %>">Delete</a>
+            </td>
+        </tr>
+        <% } %>
+    </table>
+    <a href="/create_movie">Add New Movie</a>
+ </body>
+ </html>

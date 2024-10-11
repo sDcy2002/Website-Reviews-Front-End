@@ -1,0 +1,39 @@
+<!-- update_movie.ejs -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Movies</title>
+ </head>
+ <body>
+    <h1>Edit Movies</h1>
+    <form method="post" action="/update_movie/<%= movies.id %>">
+        <label for="movie_name">Movie Name :</label>
+        <input type="text" id="movie_name" name="movie_name" value="<%= movies.movie_name %>">
+        <br>
+        <label for="movie_detail">Movie Detail :</label>
+        <input type="text" id="movie_detail" name="movie_detail" value="<%= movies.movie_detail %>">
+        <br>
+        <label for="categoryID">Category :</label>
+        <input type="INTEGER" id="categoryID" name="categoryID" value="<%= movies.categoryID %>">
+        <br>
+        <label for="studioID">Studio :</label>
+        <input type="INTEGER" id="studioID" name="studioID" value="<%= movies.studioID %>">
+        <br>
+        <label for="director">Director :</label>
+        <input type="text" id="director" name="director" value="<%= movies.director %>">
+        <br>
+        <label for="flimmaking_funds">Budget :</label>
+        <input type="text" id="flimmaking_funds" name="flimmaking_funds" value="<%= movies.flimmaking_funds %>">
+        <br>
+        <label for="movie_income">Movie Income :</label>
+        <input type="text" id="movie_income" name="movie_income" value="<%= movies.movie_income %>">
+        <br>
+        <input type="submit" value="Update">
+    </form>
+    <a href="/movies/<%= movies[i].id %>">View</a>
+    <a href="/delete_movie/<%= movies[i].id %>">Delete</a>
+    <a href="/">Back to List</a>
+ </body>
+ </html>
