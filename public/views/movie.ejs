@@ -5,17 +5,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Noto+Music&family=Noto+Sans+Thai+Looped:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
  </head>
  <body>
-    <h1><%= movie.movie_name %></h1>
-    <p>Category: <%= movie.categoryID %></p>
-    <p>Studio: <%= movie.studioID %></p>
-    <p>Movie Detail: <%= movie.movie_detail %></p>
-    <p>Director: <%= movie.director %></p>
-    <p>Budget: <%= movie.flimmaking_funds %></p>
-    <p>Movie Income: <%= movie.movie_income %></p>
-    <a href="/update_movie/<%= movies.id %>">Edit</a>
-    <a href="/delete_movie/<%= movies.id %>">Delete</a>
-    <a href="/">Back to List</a>
+  <h1 class="mt-5 mb-3" style="font-size: 64px;">Reviews</h1>
+   <h1 class="mb-5" style="color: #fff;"><%= movie.movie_name %></h1>
+   <!-- Movie Detail -->
+   <form class="form-movie-detail" method="get" action="/movie/:id" style="font-size: 16px;">
+    <div class="col-12 mb-2" style="display: flex; flex-direction: row; justify-content: space-between;">
+      <a href="/" style="margin-right: 2px; display: inline; text-decoration: none;">
+        <img src="../images/icons/home-white.png" alt="" style="width: 40px;">
+      </a>
+      <a href="/update_movie/<%= movie.id %>" style="display: inline; text-decoration: none;">
+        <img src="../images/icons/edit-white.png" alt="" style="width: 36px;">
+      </a>
+    </div>
+    <div class="col-12">
+      <p style="display: inline;"><span>Category :</span> <%= movie.category_name %></p>
+      <p style="display: inline; margin-left: 30px;"><span>Studio:</span> <%= movie.studio_name %></p> <!-- ปรับ margin เพื่อเพิ่มช่องว่างระหว่างสองข้อความ -->
+      <p style="margin-top: 15px;"><span>Movie Detail :</span> <%= movie.movie_detail %></p>
+      <p><span>Director :</span> <%= movie.director %></p>
+      <p><span>Budget :</span> <%= movie.flimmaking_funds %></p>
+      <p><span>Movie Income :</span> <%= movie.movie_income %></p>
+    </div>
+   </form>
+
+   <!-- Reviews -->
+   <form class="form-reviews mt-3" method="get" action="/movie/<%= movie.id %>" style="font-size: 16px;">
+    <h2>Add Reviews </h2>
+    <div class="box-reviews col-12">
+        <% if (review && review.length > 0) { %>
+            <% review.forEach(function(review) { %>
+                <h4><%= review.reviewer %></h4> <!-- แสดงชื่อผู้รีวิว -->
+                <p><%= review.review_detail %></p>
+                <div style="display: flex; flex-direction: row; align-items: center;">
+                  Score : <strong><%= review.overall_score %></strong>
+                  <div style="margin-left: auto; display: flex; align-items: center;">
+                    <a href="/update_movie/<%= movie.id %>" style="margin-right: 2px; text-decoration: none;">
+                        <img src="../images/icons/edit.png" alt="" style="width: 23px;">
+                    </a>
+                    <a href="/delete_review/" style="text-decoration: none;">
+                        <img src="../images/icons/delete.png" alt="" style="width: 24px;">
+                    </a>
+                  </div>
+                </div>
+                <hr> <!-- ใช้สำหรับแยกข้อมูลแต่ละรีวิว -->
+            <% }); %>
+        <% } %>
+    </div>
+</form>
+   
  </body>
+ <!-- Bootstrap JS and dependencies -->
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
  </html>

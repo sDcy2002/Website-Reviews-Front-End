@@ -1,16 +1,20 @@
 /* Set font family and size for the whole page */
 body {
-    font-family: 'Open Sans', sans-serif;
     font-size: 16px;
+    background-image: url('../images/BG.png');
+    background-size: cover; /* ทำให้ภาพขยายเต็มพื้นที่ */
+    background-repeat: no-repeat; /* ไม่ให้ภาพซ้ำ */
   }
   
   /* Center the main heading */
   h1 {
+    font-family: "Anton SC", sans-serif;
+    font-size: 64px;
+    font-weight: 400;
     text-align: center;
     margin-top: 30px;
     margin-bottom: 50px;
-    font-size: 36px;
-    color: #2C3E50;
+    color: #F5C842;
   }
   
   /* Style the table */
@@ -22,31 +26,73 @@ body {
   th, td {
     text-align: left;
     padding: 16px;
+    font-family: "Noto Sans Thai Looped", sans-serif;
+    font-weight: 400;
+    font-style: normal;
   }
   
   th {
-    background-color: #2C3E50;
-    color: white;
-    font-weight: 600;
+    font-family: "Noto Music", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #1E1E1E;
+    color: #F5C842;
     text-transform: uppercase;
   }
   
+  tr {
+    background-color: #ffffff;
+  }
+
   tr:nth-child(even) {
-    background-color: #f5f5f5;
+    background-color: #FAF4E2;
   }
   
 /* Style the form */
 form {
+    font-family: "Noto Sans Thai Looped", sans-serif;
+    background-color: rgba(30, 30, 30, 0.7);
+    color: #ffffff;
     width: 50%;
     margin: auto;
-    border: 2px solid #2C3E50;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
+    overflow: hidden;
   }
   
+  .form-movie-detail {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .form-movie-detail img {
+    align-items: center;
+  }
+
+  .form-movie-detail span {
+    color: #F5C842;
+  }
+
+  .form-movie-detail p {
+    font-weight: 300;
+  }
+
+  .form-reviews {
+    background-color: #fff;
+    color: #1E1E1E;
+  }
+
+  .box-reviews {
+    border-radius: 10px;
+    margin-top: 20px;
+    padding-top: 10px;
+    background-color: #f2f2f2;
+  }
+
   label {
+    color: #ffffff;
     display: block;
-    font-weight: bold;
     margin-bottom: 10px;
   }
   
@@ -60,7 +106,7 @@ form {
   }
   
   input[type="submit"] {
-    background-color: #2C3E50;
+    background-color: #1E1E1E;
     color: white;
     border: none;
     padding: 10px 16px;
@@ -74,16 +120,16 @@ form {
   a {
     display: inline-block;
     margin: 10px;
-    color: #2C3E50;
+    color: #1E1E1E;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
-    border-bottom: 2px solid transparent;
-    transition: border-bottom-color 0.2s;
+    /* border-bottom: 2px solid transparent; */
+    /* transition: border-bottom-color 0.2s; */
   }
   
   a:hover {
-    border-bottom-color: #2C3E50;
+    color: #795b00;
   }
 
   .link-center {
@@ -94,7 +140,7 @@ form {
   .link-center a {
     display: inline-block;
     margin: 10px;
-    color: #2C3E50;
+    color: #1E1E1E;
     text-decoration: none;
     font-size: 18px;
     font-weight: 600;
@@ -103,20 +149,50 @@ form {
   }
   
   .link-center a:hover {
-    border-bottom-color: #2C3E50;
+    border-bottom-color: #1E1E1E;
   }
 
 /* Style the table */
-.movie-table {
+.movies-reviews-table {
     border-collapse: collapse;
-    width: 75%;
+    width: 70%;
     margin: 0 auto; /* center the table */
     margin-bottom: 20px;
-    border-bottom: 2px solid #2C3E50;
+    border-radius: 20px; /* มุมโค้ง */
+    overflow: hidden; /* ป้องกันไม่ให้เนื้อหาเกินขอบ */
   }
   
-  th, td {
-    text-align: left;
-    padding: 16px;
-  }
   
+.button {
+  display: inline-block; 
+  padding: 10px 20px; 
+  background-color: #F5C842; 
+  color: #1E1E1E; 
+  text-decoration: none; 
+  border-radius: 5px; 
+  font-family: "Noto Sans Thai Looped", sans-serif;
+  font-weight: 400; 
+  font-size: 14px;
+}
+
+.button:hover {
+    background-color: #1E1E1E; /* สีพื้นหลังเมื่อเมาส์ชี้ไปที่ปุ่ม */
+    color: #F5C842;
+}
+
+.back-btn {
+  display: inline-block; 
+  padding: 10px 20px; 
+  background-color: #428FF5; 
+  color: #ffffff; 
+  text-decoration: none; 
+  border-radius: 5px; 
+  font-family: "Noto Sans Thai Looped", sans-serif;
+  font-weight: 500; 
+  font-size: 16px;
+}
+
+.back-btn:hover {
+  background-color: #244e84; /* สีพื้นหลังเมื่อเมาส์ชี้ไปที่ปุ่ม */
+  color: #ffffff;
+}
