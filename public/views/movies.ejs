@@ -7,26 +7,23 @@
     <link rel="icon" type="image/png" href="../images/icons/popcorn.png">
     <title>Movies Reviews</title>
     <link rel="stylesheet" href="../css/style.css">
-    <!-- Bootstrap CSS -->
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Noto+Music&family=Noto+Sans+Thai+Looped:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
  </head>
  <body>
+
     <h1>Movies Reviews</h1>
     <table class="movies-reviews-table">
         <tr>
             <th>Movie Name</th>
             <th>Studio</th>
-            <th>Score</th>
             <th>Actions</th>
         </tr>
         <% for (var i = 0; i < movies.length; i++) { %>
         <tr>
             <td><%= movies[i].movie_name %></td>
             <td><%= movies[i].studio_name %></td>
-            <td></td>
             <td>
                 <a href="/movies_reviews/<%= movies[i].id %>">Reviews</a>
                 <a href="/delete_movie/<%= movies[i].id %>">Delete</a>

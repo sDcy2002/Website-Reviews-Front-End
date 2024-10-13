@@ -22,12 +22,22 @@
         <label for="movie_detail">Movie Detail :</label>
         <input type="text" id="movie_detail" name="movie_detail">
         <br>
-        <label for="categoryID">Category :</label>
-        <input type="text" id="categoryID" name="categoryID">
-        <br>
-        <label for="studioID">Studio :</label>
-        <input type="text" id="studioID" name="studioID">
-        <br>
+        <label for="categoryID">Category :</label><br>
+        <select class="form-select" aria-label="Default select example" name="categoryID">
+         <option selected>Open this select menu</option>
+            <% for (var i = 0; i < category.length; i++) { %>
+               <option value="<%= category[i].id %>"><%= category[i].name %></option>
+            <% } %>
+         </select>
+         <br>
+        <label for="studioID">Studio :</label><br>
+        <select class="form-select" aria-label="Default select example" name="categoryID">
+         <option selected>Open this select menu</option>
+            <% for (var i = 0; i < studio.length; i++) { %>
+               <option value="<%= studio[i].id %>"><%= studio[i].name %></option>
+            <% } %>
+         </select>
+         <br>
         <label for="director">Director :</label>
         <input type="text" id="director" name="director">
         <br>

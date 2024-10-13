@@ -31,7 +31,7 @@ app.get("/", async (req, res) => {
 app.get("/movies_reviews/:id", async (req, res) => {
     try {
         const response = await axios.get(base_url + '/movies/' + req.params.id);
-        const reviewsResponse = await axios.get(base_url + '/review?movieID=' + req.params.id); // ปรับ URL ตาม API ของคุณ
+        const reviewsResponse = await axios.get(base_url + '/review/' + req.params.id); // ปรับ URL ตาม API ของคุณ
         res.render("movies_reviews", { movie: response.data, review: reviewsResponse.data });
         // console.log(response.data)
         // console.log(reviewsResponse.data)
@@ -41,8 +41,19 @@ app.get("/movies_reviews/:id", async (req, res) => {
     }
 });
 
-app.get("/create_movie", (req, res) => {
-    res.render("create_movie");
+
+app.get("/create_movie", async (req, res) => {
+    try {
+        // เรียก API หรือฐานข้อมูลเพื่อดึงข้อมูลภาพยนตร์
+        const responseCategory = await axios.get(base_url + '/category');
+        const responseStudio = await axios.get(base_url + '/studio');
+        
+        // ส่งข้อมูลไปยังไฟล์ EJS
+        res.render("create_movie", { category: responseCategory.data, studio: responseStudio.data });
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Error');
+    }
 });
 
 // เพิ่มข้อมูลหนังใหม่
@@ -66,9 +77,10 @@ app.post("/create_movie", async (req, res) => {
 // ดึงข้อมูลเก่ามาโชว์
 app.get("/update_movie/:id", async (req, res) => {
     try {
-        const response = await axios.get(
-        base_url + '/movies/' + req.params.id);
-        res.render("update_movie", { movie: response.data});
+        const responseMovies = await axios.get( base_url + '/movies/' + req.params.id);
+        const responseCategory = await axios.get( base_url + '/category/');
+        const responseStudio = await axios.get( base_url + '/studio/');
+        res.render("update_movie", { movie: responseMovies.data, category: responseCategory.data, studio: responseStudio.data });
     } catch (err) {
         console.error(err);
         res.status(500).send('Error');
@@ -103,17 +115,6 @@ app.get("/delete_movie/:id", async (req, res) => {
 });
 
 //--------------------------------------- Reviews --------------------------------------- //
-app.get("/reviews/:id", async (req, res) => {
-    try {
-        const response = await axios.get(base_url + '/review/' + req.params.id);
-        res.render("reviews", { reviews: response.data });
-        console.log(response.data); // ตรวจสอบข้อมูลที่ส่งไปยัง View
-    } catch (err) {
-        console.error(err);
-        res.status(500).send('Error');
-    }
-});
-
 app.get("/create_review", (req, res) => {
     res.render("create_review");
 });
@@ -169,6 +170,17 @@ app.get("/delete_review/:id", async (req, res) => {
     }
 });
 
+//--------------------------------------- Category --------------------------------------- //
+app.get("/category", async (req, res) => {
+    try {
+        const response = await axios.get(base_url + '/category');
+        res.render("category", { category: response.data });
+        // console.log(response.data)
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Error');
+    }
+});
 
 
 app.listen(5500, () => {

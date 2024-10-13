@@ -18,7 +18,7 @@
   <h1 class="mt-5 mb-3" style="font-size: 64px;">Reviews</h1>
    <h1 class="mb-5" style="color: #fff;"><%= movie.movie_name %></h1>
    <!-- Movie Detail -->
-   <form class="form-movie-detail" method="get" action="/movie/:id" style="font-size: 16px;">
+   <form class="form-movie-detail" method="get" action="/movies_reviews/:id" style="font-size: 16px;">
     <div class="col-12 mb-2" style="display: flex; flex-direction: row; justify-content: space-between;">
       <a href="/" style="margin-right: 2px; display: inline; text-decoration: none;">
         <img src="../images/icons/home-white.png" alt="" style="width: 40px;">
@@ -38,14 +38,14 @@
    </form>
 
    <!-- Reviews -->
-   <form class="form-reviews mt-3" method="get" action="/movie/<%= movie.id %>" style="font-size: 16px;">
-    <a href="/create_review/"><h2>Add Reviews <img src="../images/icons/plus.png" alt="" style="width: 24px;"></h2></a>
-    <div id="review-<%= review.id %>" class="box-reviews col-12">
+   <form class="form-reviews mt-3" method="get" action="/movies_reviews/<%= movie.id %>" style="font-size: 14px;">
+    <a href="/create_review/" style="text-decoration: none;"><h2>Add Reviews <img src="../images/icons/plus.png" alt="" style="width: 24px;"></h2></a>
+    <div class="box-reviews col-12">
         <% if (review && review.length > 0) { %>
             <% review.forEach(function(review) { %>
                 <h4><%= review.reviewer %></h4> <!-- แสดงชื่อผู้รีวิว -->
                 <p><%= review.review_detail %></p>
-                <div style="display: flex; flex-direction: row; align-items: center; font-size: 18px;">
+                <div style="display: flex; flex-direction: row; align-items: center; font-size: 16px;">
                   Score : <strong style="margin-left: 5px;"> <%= review.overall_score %></strong>
                   <div style="margin-left: auto; display: flex; align-items: center;">
                     <a href="/update_movie/<%= movie.id %>" style="margin-right: 2px; text-decoration: none;">

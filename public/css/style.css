@@ -210,3 +210,10 @@ form {
   background-color: #244e84; /* สีพื้นหลังเมื่อเมาส์ชี้ไปที่ปุ่ม */
   color: #ffffff;
 }
+
+ select {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 90%;
+  border-radius: 5px;
+ }
