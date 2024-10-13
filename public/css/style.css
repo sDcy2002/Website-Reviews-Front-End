@@ -17,6 +17,20 @@ body {
     color: #F5C842;
   }
   
+  h2 {
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+  }
+
+  h4 {
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
   /* Style the table */
   table {
     border-collapse: collapse;

@@ -1,0 +1,37 @@
+<!-- create_movie.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="icon" type="image/png" href="../images/icons/popcorn.png">
+   <title>Add Reviews</title>
+   <link rel="stylesheet" href="../css/style.css">
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Noto+Music&family=Noto+Sans+Thai+Looped:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+   <h1 class="mt-5 mb-5" style="font-size: 64px;">Add Reviews</h1>
+   <form method="post" action="/create_review/">
+        <label for="movieID">Movie ID :</label>
+        <input type="text" id="movieID" name="movieID">
+        <br>
+        <label for="reviewer">Your Name :</label>
+        <input type="text" id="reviewer" name="reviewer">
+        <br>
+        <label for="review_detail">Reviews :</label>
+        <input type="text" id="review_detail" name="review_detail">
+        <br>
+        <label for="overall_score">Give score  Movie (0-100) :</label>
+        <input type="text" id="overall_score" name="overall_score">
+        <br>
+        <div style="display: flex; flex-direction: row; justify-content: space-between;">
+            <a class="back-btn" href="/movies_reviews" style="text-decoration: none;">Back</a>
+            <input type="submit" value="Confirm" style="background-color: #39974A; margin-right: 10px; height: 80%;">
+       </div>
+   </form>
+</body>
+</html>

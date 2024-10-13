@@ -4,6 +4,7 @@
  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../images/icons/popcorn.png">
     <title>Movie</title>
     <link rel="stylesheet" href="../css/style.css">
     <!-- Bootstrap CSS -->
@@ -11,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Noto+Music&family=Noto+Sans+Thai+Looped:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@800&display=swap" rel="stylesheet">
  </head>
  <body>
   <h1 class="mt-5 mb-3" style="font-size: 64px;">Reviews</h1>
@@ -37,19 +39,19 @@
 
    <!-- Reviews -->
    <form class="form-reviews mt-3" method="get" action="/movie/<%= movie.id %>" style="font-size: 16px;">
-    <h2>Add Reviews </h2>
-    <div class="box-reviews col-12">
+    <a href="/create_review/"><h2>Add Reviews <img src="../images/icons/plus.png" alt="" style="width: 24px;"></h2></a>
+    <div id="review-<%= review.id %>" class="box-reviews col-12">
         <% if (review && review.length > 0) { %>
             <% review.forEach(function(review) { %>
                 <h4><%= review.reviewer %></h4> <!-- แสดงชื่อผู้รีวิว -->
                 <p><%= review.review_detail %></p>
-                <div style="display: flex; flex-direction: row; align-items: center;">
-                  Score : <strong><%= review.overall_score %></strong>
+                <div style="display: flex; flex-direction: row; align-items: center; font-size: 18px;">
+                  Score : <strong style="margin-left: 5px;"> <%= review.overall_score %></strong>
                   <div style="margin-left: auto; display: flex; align-items: center;">
                     <a href="/update_movie/<%= movie.id %>" style="margin-right: 2px; text-decoration: none;">
                         <img src="../images/icons/edit.png" alt="" style="width: 23px;">
                     </a>
-                    <a href="/delete_review/" style="text-decoration: none;">
+                    <a href="/delete_review/<%= review.id %>" style="text-decoration: none;">
                         <img src="../images/icons/delete.png" alt="" style="width: 24px;">
                     </a>
                   </div>

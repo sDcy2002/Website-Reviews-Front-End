@@ -4,6 +4,7 @@
  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../images/icons/popcorn.png">
     <title>Movies Reviews</title>
     <link rel="stylesheet" href="../css/style.css">
     <!-- Bootstrap CSS -->
@@ -13,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Noto+Music&family=Noto+Sans+Thai+Looped:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
  </head>
  <body>
-    <h1>Movies</h1>
+    <h1>Movies Reviews</h1>
     <table class="movies-reviews-table">
         <tr>
             <th>Movie Name</th>
@@ -27,7 +28,7 @@
             <td><%= movies[i].studio_name %></td>
             <td></td>
             <td>
-                <a href="/movie/<%= movies[i].id %>">Reviews</a>
+                <a href="/movies_reviews/<%= movies[i].id %>">Reviews</a>
                 <a href="/delete_movie/<%= movies[i].id %>">Delete</a>
             </td>
         </tr>

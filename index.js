@@ -28,13 +28,13 @@ app.get("/", async (req, res) => {
 });
 
 
-app.get("/movie/:id", async (req, res) => {
+app.get("/movies_reviews/:id", async (req, res) => {
     try {
         const response = await axios.get(base_url + '/movies/' + req.params.id);
         const reviewsResponse = await axios.get(base_url + '/review?movieID=' + req.params.id); // ปรับ URL ตาม API ของคุณ
-        res.render("movie", { movie: response.data, review: reviewsResponse.data });
-        console.log(response.data)
-        console.log(reviewsResponse.data)
+        res.render("movies_reviews", { movie: response.data, review: reviewsResponse.data });
+        // console.log(response.data)
+        // console.log(reviewsResponse.data)
     } catch (err) {
         console.error(err);
         res.status(500).send('Error');
@@ -42,7 +42,7 @@ app.get("/movie/:id", async (req, res) => {
 });
 
 app.get("/create_movie", (req, res) => {
-    res.render("create");
+    res.render("create_movie");
 });
 
 // เพิ่มข้อมูลหนังใหม่
@@ -68,7 +68,7 @@ app.get("/update_movie/:id", async (req, res) => {
     try {
         const response = await axios.get(
         base_url + '/movies/' + req.params.id);
-        res.render("update", { movie: response.data});
+        res.render("update_movie", { movie: response.data});
     } catch (err) {
         console.error(err);
         res.status(500).send('Error');
@@ -115,16 +115,16 @@ app.get("/reviews/:id", async (req, res) => {
 });
 
 app.get("/create_review", (req, res) => {
-    res.render("create");
+    res.render("create_review");
 });
 
 // เพิ่มข้อมูลหนังใหม่
 app.post("/create_review", async (req, res) => {
     try {
         const data = { movieID: req.body.movieID,
-                       review_detail: req.body.review_detail,
-                       overall_score: req.body.overall_score, 
-                       reviewer: req.body.reviewer };
+                review_detail: req.body.review_detail,
+                overall_score: req.body.overall_score, 
+                reviewer: req.body.reviewer };
         await axios.post(base_url + '/review', data);
         res.redirect("/");
     } catch (err) {
@@ -138,7 +138,7 @@ app.get("/update_review/:id", async (req, res) => {
     try {
         const response = await axios.get(
         base_url + '/movie_detail&reviews/' + req.params.id);
-        res.render("update", { reviews: response.data});
+        res.render("update_review", { reviews: response.data});
     } catch (err) {
         console.error(err);
         res.status(500).send('Error');
