@@ -334,7 +334,7 @@ app.get("/delete_studio/:id", async (req, res) => {
 });
 
 app.listen(5500, () => {
-    console.log('Server stated on port 5500');
+    console.log(`app listening at http://localhost:${5500}`);
 });
 
 
