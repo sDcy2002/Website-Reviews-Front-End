@@ -4,7 +4,7 @@ const app = express();
 var bodyParser = require('body-parser');
 const path = require("path");
 
-const base_url = 'http://localhost:3000';
+const base_url = 'https://node68391-project.proen.app.ruk-com.cloud';
 
 // Set the template engine
 app.set("views", path.join(__dirname, "/public/views"));
@@ -33,8 +33,6 @@ app.get("/movies_reviews/:id", async (req, res) => {
         const response = await axios.get(base_url + '/movies/' + req.params.id);
         const reviewsResponse = await axios.get(base_url + '/review/' + req.params.id); // ปรับ URL ตาม API ของคุณ
         res.render("movies_reviews", { movie: response.data, review: reviewsResponse.data });
-        // console.log(response.data)
-        // console.log(reviewsResponse.data)
     } catch (err) {
         console.error(err);
         res.status(500).send('Error');
@@ -153,7 +151,6 @@ app.get("/update_review/:id", async (req, res) => {
     try {
         const response = await axios.get(base_url + '/review_id/' + req.params.id);
         res.render("update_review", { review: response.data});
-        // console.log(response.data)
     } catch (err) {
         console.error(err);
         res.status(500).send('Error');
@@ -199,7 +196,6 @@ app.get("/categories", async (req, res) => {
     try {
         const response = await axios.get(base_url + '/category');
         res.render("categories", { categories: response.data });
-        // console.log(response.data)
     } catch (err) {
         console.error(err);
         res.status(500).send('Error');
@@ -271,7 +267,6 @@ app.get("/studios", async (req, res) => {
     try {
         const response = await axios.get(base_url + '/studio');
         res.render("studios", { studios: response.data });
-        // console.log(response.data)
     } catch (err) {
         console.error(err);
         res.status(500).send('Error');
