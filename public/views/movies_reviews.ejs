@@ -1,11 +1,11 @@
-<!-- movie.ejs -->
+<!-- movies_reviews.ejs -->
  <!DOCTYPE html>
  <html lang="en">
  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../images/icons/popcorn.png">
-    <title>Movie</title>
+    <title>Movies Reviews</title>
     <link rel="stylesheet" href="../css/style.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -39,7 +39,7 @@
 
    <!-- Reviews -->
    <form class="form-reviews mt-3" method="get" action="/movies_reviews/<%= movie.id %>" style="font-size: 14px;">
-    <a href="/create_review/" style="text-decoration: none;"><h2>Add Reviews <img src="../images/icons/plus.png" alt="" style="width: 24px;"></h2></a>
+    <a href="/create_review/<%= movie.id %>" style="text-decoration: none;"><h3>Add Reviews <img src="../images/icons/plus.png" alt="" style="width: 24px;"></h3></a>
     <div class="box-reviews col-12">
         <% if (review && review.length > 0) { %>
             <% review.forEach(function(review) { %>
@@ -48,12 +48,12 @@
                 <div style="display: flex; flex-direction: row; align-items: center; font-size: 16px;">
                   Score : <strong style="margin-left: 5px;"> <%= review.overall_score %></strong>
                   <div style="margin-left: auto; display: flex; align-items: center;">
-                    <a href="/update_movie/<%= movie.id %>" style="margin-right: 2px; text-decoration: none;">
+                    <a href="/update_review/<%= review.id %>" style="margin-right: 2px; text-decoration: none;">
                         <img src="../images/icons/edit.png" alt="" style="width: 23px;">
                     </a>
-                    <a href="/delete_review/<%= review.id %>" style="text-decoration: none;">
-                        <img src="../images/icons/delete.png" alt="" style="width: 24px;">
-                    </a>
+                    <a href="/delete_review/<%= review.id %>?movieID=<%= review.movieID %>" style="text-decoration: none;">
+                      <img src="../images/icons/delete.png" alt="Delete" style="width: 24px;">
+                  </a>
                   </div>
                 </div>
                 <hr> <!-- ใช้สำหรับแยกข้อมูลแต่ละรีวิว -->

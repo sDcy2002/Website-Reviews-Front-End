@@ -3,7 +3,7 @@ body {
     font-size: 16px;
     background-image: url('../images/BG.png');
     background-size: cover; /* ทำให้ภาพขยายเต็มพื้นที่ */
-    background-repeat: no-repeat; /* ไม่ให้ภาพซ้ำ */
+    background-repeat: repeat; /* ไม่ให้ภาพซ้ำ */
   }
   
   /* Center the main heading */
@@ -13,14 +13,13 @@ body {
     font-weight: 400;
     text-align: center;
     margin-top: 30px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     color: #F5C842;
   }
   
-  h2 {
+  h3 {
     font-family: "Outfit", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 800;
     font-style: normal;
   }
 
@@ -46,12 +45,17 @@ body {
   }
   
   th {
+    padding-left: 30px;
     font-family: "Noto Music", sans-serif;
     font-weight: 400;
     font-style: normal;
     background-color: #1E1E1E;
     color: #F5C842;
     text-transform: uppercase;
+  }
+
+  td {
+    padding-left: 30px;
   }
   
   tr {
@@ -107,7 +111,7 @@ form {
   label {
     color: #ffffff;
     display: block;
-    margin-bottom: 10px;
+    margin-top: 10px;
   }
   
   input[type="text"] {
@@ -175,6 +179,19 @@ form {
     border-radius: 20px; /* มุมโค้ง */
     overflow: hidden; /* ป้องกันไม่ให้เนื้อหาเกินขอบ */
   }
+
+  .categories-table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 0 auto; /* center the table */
+    margin-bottom: 20px;
+    border-radius: 20px; /* มุมโค้ง */
+    overflow: hidden; /* ป้องกันไม่ให้เนื้อหาเกินขอบ */
+  }
+
+  .categories-table th {
+    font-size: 14px;
+  }
   
   
 .button {
@@ -192,6 +209,23 @@ form {
 .button:hover {
     background-color: #1E1E1E; /* สีพื้นหลังเมื่อเมาส์ชี้ไปที่ปุ่ม */
     color: #F5C842;
+}
+
+.button2 {
+  display: inline-block; 
+  padding: 10px 20px; 
+  background-color: #ffbf00; 
+  color: #1E1E1E; 
+  text-decoration: none; 
+  border-radius: 5px; 
+  font-family: "Noto Sans Thai Looped", sans-serif;
+  font-weight: 400; 
+  font-size: 14px;
+}
+
+.button2:hover {
+    background-color: #F5C842; /* สีพื้นหลังเมื่อเมาส์ชี้ไปที่ปุ่ม */
+    color: #1E1E1E;
 }
 
 .back-btn {
@@ -214,6 +248,6 @@ form {
  select {
   padding-top: 5px;
   padding-bottom: 5px;
-  width: 90%;
+  width: 70%;
   border-radius: 5px;
  }

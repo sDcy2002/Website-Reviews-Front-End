@@ -14,21 +14,16 @@
    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Noto+Music&family=Noto+Sans+Thai+Looped:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-   <h1 class="mt-5 mb-5" style="font-size: 64px;">Add Reviews</h1>
-   <form method="post" action="/create_review/">
-        <input type="hidden" id="movieID" name="movieID" value="<%= movie.id %>">
+   <h1 class="mt-5 mb-5" style="font-size: 64px;">Add Category</h1>
+   <form method="post" action="/create_category/">
+        <label for="name">Category Name :</label>
+        <input type="text" id="name" name="name">
         <br>
-        <label for="reviewer">Your Name :</label>
-        <input type="text" id="reviewer" name="reviewer">
-        <br>
-        <label for="review_detail">Reviews :</label>
-        <input type="text" id="review_detail" name="review_detail">
-        <br>
-        <label for="overall_score">Give score  Movie (0-100) :</label>
-        <input type="text" id="overall_score" name="overall_score">
+        <label for="detail">Category Detail :</label>
+        <input type="text" id="detail" name="detail">
         <br>
         <div style="display: flex; flex-direction: row; justify-content: space-between;">
-            <a class="back-btn" href="/movies_reviews/<%= movie.id %>" style="text-decoration: none;">Back</a>
+            <a class="back-btn" href="/categories" style="text-decoration: none;">Back</a>
             <input type="submit" value="Confirm" style="background-color: #39974A; margin-right: 10px; height: 80%;">
        </div>
    </form>

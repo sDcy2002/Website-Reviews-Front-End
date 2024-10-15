@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../images/icons/popcorn.png">
-    <title>Add Movies</title>
+    <title>Movies Reviews</title>
     <link rel="stylesheet" href="../css/style.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -29,14 +29,16 @@
                <option value="<%= category[i].id %>"><%= category[i].name %></option>
             <% } %>
          </select>
+         <a class="button2" href="/categories" style="text-decoration: none;">Add Category</a>
          <br>
         <label for="studioID">Studio :</label><br>
-        <select class="form-select" aria-label="Default select example" name="categoryID">
+        <select class="form-select" aria-label="Default select example" name="studioID">
          <option selected>Open this select menu</option>
             <% for (var i = 0; i < studio.length; i++) { %>
                <option value="<%= studio[i].id %>"><%= studio[i].name %></option>
             <% } %>
          </select>
+         <a class="button2" href="/studios" style="text-decoration: none;">Add Studio</a>
          <br>
         <label for="director">Director :</label>
         <input type="text" id="director" name="director">

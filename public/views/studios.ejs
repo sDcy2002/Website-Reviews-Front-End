@@ -1,0 +1,49 @@
+<!-- category.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="icon" type="image/png" href="../images/icons/popcorn.png">
+   <title>Movies Reviews</title>
+   <link rel="stylesheet" href="../css/style.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Noto+Music&family=Noto+Sans+Thai+Looped:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+   <h1>Studios</h1>
+   <a href="/" style="margin: 10px 10%;"><img src="../images/icons/home-button.png" alt="" style="width: 42px;"></a>
+   <table class="categories-table">
+       <tr>
+        <th>ID</th>
+           <th>Studio Name</th>
+           <th>detail</th>
+           <th>Actions</th>
+       </tr>
+       <% for (var i = 0; i < studios.length; i++) { %>
+       <tr>
+        <td><%= studios[i].id %></td>
+           <td><%= studios[i].name %></td>
+           <td style="width: 60%;"><%= studios[i].detail %></td>
+           <td>
+               <a href="/update_studio/<%= studios[i].id %>">Edit</a>
+               <a href="/delete_studio/<%= studios[i].id %>">Delete</a>
+           </td>
+       </tr>
+       <% } %>
+   </table>
+   <center>
+      <div style="display: flex; flex-direction: row; margin-left: 10%;">
+         <a class="back-btn" href="create_movie" style="font-size: 18px; font-weight: 500;">Back</a>
+         <a class="button" href="/create_studio" style="font-size: 18px; font-weight: 500;">Add Studios</a>
+      </div>
+     </center>
+   <!-- <center><a href="/create">Add Movies</a></center> -->
+</body>
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</html>

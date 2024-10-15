@@ -1,10 +1,11 @@
+<!-- update_movie.ejs -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" src="../images/icons/popcorn.png">
-    <title>Edit Movies</title>
+    <link rel="icon" type="image/png" href="../images/icons/popcorn.png">
+    <title>Movies Reviews</title>
     <link rel="stylesheet" href="../css/style.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -21,21 +22,25 @@
         <label for="movie_detail">Movie Detail :</label>
         <input type="text" id="movie_detail" name="movie_detail" value="<%= movie.movie_detail %>">
         <br>
-        <label for="categoryID">Category :</label><br>
-        <select class="form-select" aria-label="Default select example" name="categoryID">
-            <option selected><%= movie.category_name %></option>
-               <% for (var i = 0; i < category.length; i++) { %>
-                  <option value="<%= category[i].id %>"><%= category[i].name %></option>
-               <% } %>
-            </select>
+        <label for="categoryID">Category :</label>
         <br>
-        <label for="studioID">Studio :</label><br>
         <select class="form-select" aria-label="Default select example" name="categoryID">
-            <option selected><%= movie.studio_name %></option>
-               <% for (var i = 0; i < category.length; i++) { %>
-                  <option value="<%= category[i].id %>"><%= category[i].name %></option>
-               <% } %>
-        </select>
+            <% for (var i = 0; i < category.length; i++) { %>
+               <option value="<%= category[i].id %>" <%= category[i].name === movie.category_name ? 'selected' : '' %>>
+                  <%= category[i].name %>
+               </option>
+            <% } %>
+         </select>
+        <br>
+        <label for="studioID">Studio : </label>
+        <br>
+        <select class="form-select" aria-label="Default select example" name="studioID">
+            <% for (var i = 0; i < studio.length; i++) { %>
+               <option value="<%= studio[i].id %>" <%= studio[i].name === movie.studio_name ? 'selected' : '' %>>
+                  <%= studio[i].name %>
+               </option>
+            <% } %>
+         </select>
         <br>
         <label for="director">Director :</label>
         <input type="text" id="director" name="director" value="<%= movie.director %>">
@@ -47,7 +52,7 @@
         <input type="text" id="movie_income" name="movie_income" value="<%= movie.movie_income %>">
         <br>
         <div style="display: flex; flex-direction: row; justify-content: space-between;">
-            <a class="back-btn" href="/" style="text-decoration: none;">Back</a>
+            <a class="back-btn" href="/movies_reviews/<%= movie.id %>" style="text-decoration: none;">Back</a>
             <input type="submit" value="Update" style="background-color: #39974A; margin-right: 10px; height: 80%;">
            </div>
     </form>

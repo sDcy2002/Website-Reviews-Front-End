@@ -1,0 +1,41 @@
+<!-- update_review.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../images/icons/popcorn.png">
+    <title>Edit Reviews</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Noto+Music&family=Noto+Sans+Thai+Looped:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 class="mt-5 mb-5">Movies Reviews</h1>
+    <form method="post" action="/update_review/<%= review.id %>">
+        <input type="hidden" id="id" name="id" value="<%= review.id %>">
+        <input type="hidden" id="movieID" name="movieID" value="<%= review.movieID %>">
+        <label for="reviewer">Reviewer Name :</label>
+        <input type="text" id="reviewer" name="reviewer" value="<%= review.reviewer %>">
+        <br>
+        <label for="review_detail">Reviews :</label>
+        <input type="text" id="review_detail" name="review_detail" value="<%= review.review_detail %>">
+        <br>
+        <label for="overall_score">Edit score Movie (0-100) :</label>
+        <input type="text" id="overall_score" name="overall_score" value="<%= review.overall_score %>">
+        <br>
+        <div style="display: flex; flex-direction: row; justify-content: space-between;">
+            <a class="back-btn" href="/movies_reviews/<%= review.movieID %>" style="text-decoration: none;">Back</a>
+            <input type="submit" value="Update" style="background-color: #39974A; margin-right: 10px; height: 80%;">
+        </div>
+    </form>
+</body>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</html>

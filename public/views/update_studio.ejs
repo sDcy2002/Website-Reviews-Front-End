@@ -1,0 +1,36 @@
+<!-- update_category.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" src="../images/icons/popcorn.png">
+    <title>Edit Studio</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Noto+Music&family=Noto+Sans+Thai+Looped:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 class="mt-5 mb-5">Movies Reviews</h1>
+    <form method="post" action="/update_studio/<%= studio.id %>">
+        <label for="name">Studio Name :</label>
+        <input type="text" id="name" name="name" value="<%= studio.name %>">
+        <br>
+        <label for="detail">Studio Detail :</label>
+        <input type="text" id="detail" name="detail" value="<%= studio.detail %>">
+        <br>
+        <div style="display: flex; flex-direction: row; justify-content: space-between;">
+            <a class="back-btn" href="/studios" style="text-decoration: none;">Back</a>
+            <input type="submit" value="Update" style="background-color: #39974A; margin-right: 10px; height: 80%;">
+           </div>
+    </form>
+</body>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</html>
