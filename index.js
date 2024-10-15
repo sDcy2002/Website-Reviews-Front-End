@@ -333,8 +333,8 @@ app.get("/delete_studio/:id", async (req, res) => {
     }
 });
 
-app.listen(5500, () => {
-    console.log(`app listening at http://localhost:${5500}`);
+app.listen(8080, () => {
+    console.log(`app listening at http://localhost:${8080}`);
 });
 
 
