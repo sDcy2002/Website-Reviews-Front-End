@@ -4,7 +4,7 @@ const app = express();
 var bodyParser = require('body-parser');
 const path = require("path");
 
-const base_url = 'https://node68398-env-4961778.proen.app.ruk-com.cloud';
+const base_url = 'http://node68398-env-4961778.proen.app.ruk-com.cloud';
 
 // Set the template engine
 app.set("views", path.join(__dirname, "/public/views"));
