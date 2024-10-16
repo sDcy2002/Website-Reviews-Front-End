@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../images/icons/popcorn.png">
-    <title>Movies Reviews</title>
+    <title>Volunteers Website</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,26 +13,27 @@
  </head>
  <body>
 
-    <h1>Movies Reviews</h1>
+    <h1>Volunteers Website</h1>
     <table class="movies-reviews-table">
         <tr>
-            <th>Movie Name</th>
-            <th>Studio</th>
-            <th>Actions</th>
+            <th>Volunteer</th>
+            <th>Event</th>
+            <th>Task</th>
+            <th>Hour</th>
+            <th>Delete</th>
         </tr>
         <% for (var i = 0; i < movies.length; i++) { %>
         <tr>
             <td><%= movies[i].movie_name %></td>
             <td><%= movies[i].studio_name %></td>
             <td>
-                <a href="/movies_reviews/<%= movies[i].id %>" style="padding-right: 20%;">Reviews</a>
                 <a href="/delete_movie/<%= movies[i].id %>">Delete</a>
             </td>
         </tr>
         <% } %>
     </table>
     <center>
-        <a class="button" href="/create_movie" style="font-size: 18px; font-weight: 500;">Add Movies</a>
+        <a class="button" href="/create_movie" style="font-size: 18px; font-weight: 500;">Add Name</a>
       </center>
     <!-- <center><a href="/create">Add Movies</a></center> -->
  </body>

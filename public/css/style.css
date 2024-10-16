@@ -1,7 +1,7 @@
 /* Set font family and size for the whole page */
 body {
     font-size: 16px;
-    background-image: url('../images/BG.png');
+    background-image: url('../images/Employee-Volunteering-Double-A-1400x733.jpg');
     background-size: cover; /* ทำให้ภาพขยายเต็มพื้นที่ */
     background-repeat: repeat; /* ไม่ให้ภาพซ้ำ */
   }
@@ -14,7 +14,7 @@ body {
     text-align: center;
     margin-top: 30px;
     margin-bottom: 30px;
-    color: #F5C842;
+    color: black;
   }
   
   h3 {
@@ -49,8 +49,8 @@ body {
     font-family: "Noto Music", sans-serif;
     font-weight: 400;
     font-style: normal;
-    background-color: #1E1E1E;
-    color: #F5C842;
+    background-color: #428FF5;
+    color: black;
     text-transform: uppercase;
   }
 
@@ -59,11 +59,11 @@ body {
   }
   
   tr {
-    background-color: #ffffff;
+    background-color: #bcdceb;
   }
 
   tr:nth-child(even) {
-    background-color: #FAF4E2;
+    background-color: #fafafa;
   }
   
 /* Style the form */
@@ -89,7 +89,7 @@ form {
   }
 
   .form-movie-detail span {
-    color: #F5C842;
+    color: #428FF5;
   }
 
   .form-movie-detail p {
